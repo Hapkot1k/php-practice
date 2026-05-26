@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>PHP Form Practice</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"] { width: 100%; padding: 8px; box-sizing: border-box; }
+        button { background: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+        button:hover { background: #45a049; }
+        .result { margin-top: 20px; padding: 15px; background: #f4f4f4; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Форма отправки строки</h1>
+    
+    <form action="handler.php" method="GET">
+        <div class="form-group">
+            <label for="text">Введите текст:</label>
+            <input type="text" id="text" name="text" required placeholder="Ваш текст...">
+        </div>
+        <button type="submit">Отправить</button>
+    </form>
+
+    <?php if (isset($_GET['text'])): ?>
+        <div class="result">
+            <h3>Результат:</h3>
+            <p><strong>Текст:</strong> <?= htmlspecialchars($_GET['text']) ?></p>
+            <p><strong>Длина:</strong> <?= strlen($_GET['text']) ?> символов</p>
+        </div>
+    <?php endif; ?>
+</body>
+</html>
