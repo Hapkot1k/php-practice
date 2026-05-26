@@ -1,0 +1,26 @@
+# IDE / Editor
+.idea/
+*.iml
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PHP / Composer
+vendor/
+composer.lock
+*.log
+cache/
+tmp/
+
+# Environment & Configs
+.env
+*.config.php
+config.local.php
+
+# Server / MAMP
+logs/
+*.pid
